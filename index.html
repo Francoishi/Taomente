@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Dra. Angel Carolina Coll. TaoMente: medicina tradicional china, psicoterapia taoísta y acompañamiento terapéutico integral." />
+  <title>Dra. Angel Carolina Coll | TaoMente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #151812;
+      --muted: #5f6657;
+      --paper: #fffdf8;
+      --soft: #f4f1e8;
+      --jade: #22311c;
+      --moss: #6d7b55;
+      --gold: #c7b478;
+      --line: rgba(33, 38, 28, .14);
+      --shadow: 0 18px 48px rgba(22, 30, 17, .13);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.68;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .portada {
+      min-height: 172px;
+      background-image: linear-gradient(90deg, rgba(22, 30, 17, .24), rgba(22, 30, 17, .07)), url("assets/tao-symbol.png");
+      background-size: 100% 100%;
+      background-position: center;
+      color: #f5f0cf;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portada-inner {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 26px 0 20px;
+      display: grid;
+      gap: 18px;
+      align-items: end;
+    }
+
+    .brand-block { max-width: 690px; }
+    .brand-name {
+      margin: 0;
+      font-family: Cinzel, Georgia, serif;
+      font-size: clamp(2.1rem, 6vw, 4.8rem);
+      line-height: .95;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-shadow: 0 5px 22px rgba(0, 0, 0, .38);
+    }
+    .brand-subtitle {
+      margin: 12px 0 0;
+      font-family: Cinzel, Georgia, serif;
+      font-size: clamp(1.02rem, 2.4vw, 1.58rem);
+      font-weight: 600;
+      letter-spacing: .04em;
+      color: #efe8b8;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, .35);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .nav a {
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border: 1px solid rgba(239, 232, 184, .42);
+      background: rgba(15, 24, 12, .28);
+      backdrop-filter: blur(7px);
+      color: #f5f0cf;
+      font-size: .82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .nav a:hover { background: rgba(239, 232, 184, .16); }
+
+    main { background: var(--paper); }
+    section { scroll-margin-top: 18px; }
+    .section {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: clamp(56px, 7vw, 92px) 0;
+    }
+    .section + .section { border-top: 1px solid var(--line); }
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--moss);
+    }
+    h2 {
+      margin: 0 0 22px;
+      font-family: Cinzel, Georgia, serif;
+      font-size: clamp(2rem, 4.3vw, 3.7rem);
+      line-height: 1.06;
+      font-weight: 700;
+      color: var(--jade);
+    }
+    h3 {
+      margin: 0 0 16px;
+      font-family: Cinzel, Georgia, serif;
+      font-size: clamp(1.35rem, 2.5vw, 2.05rem);
+      color: var(--jade);
+      line-height: 1.18;
+    }
+    p { margin: 0 0 18px; }
+    p:last-child { margin-bottom: 0; }
+    .lead {
+      max-width: 880px;
+      color: #343a2d;
+      font-size: clamp(1.03rem, 1.5vw, 1.2rem);
+    }
+    .content-narrow { max-width: 940px; }
+    .body-copy {
+      color: #30362b;
+      font-size: 1.02rem;
+    }
+    .body-copy strong { color: #172012; }
+    .body-copy em { color: #38432d; }
+
+    .taomente-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(360px, 1.08fr);
+      gap: clamp(30px, 5vw, 64px);
+      align-items: center;
+    }
+    .taomente-image {
+      border: 1px solid rgba(34, 49, 28, .13);
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+
+    .services-band {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background: #eef1df;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .services-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background-image: url("assets/services-bg.jpeg");
+      background-size: cover;
+      background-position: center;
+      opacity: .58;
+      filter: saturate(1.18) contrast(1.06);
+      transform: scale(1.015);
+    }
+    .services-band::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: rgba(248, 250, 239, .36);
+    }
+    .services-inner {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: clamp(60px, 7vw, 96px) 0;
+    }
+    .services-title { color: #11150f; text-shadow: 0 1px 0 rgba(255,255,255,.35); }
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 26px;
+      list-style: none;
+      padding: 0;
+      margin: 26px 0 0;
+      max-width: 980px;
+      color: #0e120d;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1rem, 1.45vw, 1.18rem);
+      font-weight: 650;
+      letter-spacing: .025em;
+      line-height: 1.45;
+    }
+    .services-list li {
+      position: relative;
+      padding-left: 23px;
+    }
+    .services-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .67em;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #1f2c19;
+      box-shadow: 0 0 0 4px rgba(31, 44, 25, .1);
+    }
+
+    .footer {
+      background: #182214;
+      color: #f5f0cf;
+    }
+    .footer-inner {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 34px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+    .footer h2 {
+      margin: 0 0 6px;
+      color: #f5f0cf;
+      font-size: clamp(1.3rem, 2.6vw, 2.1rem);
+    }
+    .footer p { margin: 0; color: rgba(245, 240, 207, .78); max-width: 680px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 12px 18px;
+      border: 1px solid rgba(245, 240, 207, .34);
+      background: #f5f0cf;
+      color: #172012;
+      font-weight: 800;
+      letter-spacing: .02em;
+      white-space: nowrap;
+    }
+    .button:hover { transform: translateY(-1px); }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 20;
+      width: 58px;
+      height: 58px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: #25d366;
+      color: #fff;
+      box-shadow: 0 14px 34px rgba(11, 79, 35, .34);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .whatsapp-float:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 18px 42px rgba(11, 79, 35, .42);
+    }
+    .whatsapp-float svg { width: 30px; height: 30px; fill: currentColor; }
+
+    @media (max-width: 860px) {
+      .portada { min-height: 190px; background-size: cover; }
+      .portada-inner { padding: 24px 0 22px; }
+      .taomente-grid { grid-template-columns: 1fr; }
+      .taomente-image { max-width: 620px; margin: 0 auto; }
+      .services-list { grid-template-columns: 1fr; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 520px) {
+      .section, .services-inner, .footer-inner, .portada-inner { width: min(100% - 28px, 1120px); }
+      .brand-name { font-size: clamp(2rem, 11vw, 3.2rem); }
+      .nav { gap: 8px; }
+      .nav a { flex: 1 1 auto; min-width: 112px; font-size: .74rem; padding-inline: 10px; }
+      .whatsapp-float { right: 14px; bottom: 14px; width: 54px; height: 54px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="portada" id="inicio">
+    <div class="portada-inner">
+      <div class="brand-block">
+        <h1 class="brand-name">Dra. Angel Carolina Coll</h1>
+        <p class="brand-subtitle">Médica psicoterapeuta</p>
+      </div>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#taomente">Tao-Mente</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#enfoque">Enfoque</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" aria-labelledby="mtc-title">
+      <div class="content-narrow">
+        <p class="eyebrow">Medicina tradicional china</p>
+        <h2 id="mtc-title">Un abordaje desde la medicina tradicional china</h2>
+        <div class="body-copy lead">
+          <p><strong>Medicina Tradicional China</strong></p>
+          <p>La Medicina Tradicional China tiene sus raíces en la filosofía del <strong>Tao</strong>, entendida como el camino natural que sostiene y armoniza toda forma de vida. Inspirada en los principios del <em>Tao Te Ching</em>, considera que la salud surge cuando la persona vive en equilibrio consigo misma, con su cuerpo, sus emociones y el entorno.</p>
+          <p>Desde esta mirada, el sufrimiento no es solo un síntoma que debe eliminarse, sino una señal de que el flujo natural se ha desequilibrado. El tratamiento busca restaurar esa armonía, favoreciendo el movimiento equilibrado de la energía vital, la integración entre cuerpo y mente y la capacidad natural del organismo para autorregularse.</p>
+          <p>Cada persona es única. Por eso, el diagnóstico no se centra únicamente en la enfermedad, sino en comprender la historia, las emociones, los hábitos, el descanso, la respiración, la alimentación y la forma en que cada individuo se relaciona con su propia vida. Lo importante no es tratar un nombre clínico, sino comprender el patrón de desequilibrio que lo origina.</p>
+          <p>En este enfoque, la salud no significa la ausencia de síntomas, sino la capacidad de adaptarse, recuperar el equilibrio y vivir con mayor claridad, serenidad y vitalidad. El objetivo del proceso terapéutico es acompañar a la persona para que vuelva a conectar con su naturaleza, disminuya el sufrimiento y encuentre una manera más consciente y armoniosa de habitar su vida.</p>
+          <p>La psicoterapia con enfoque taoísta integra estos principios filosóficos con herramientas contemporáneas de acompañamiento psicológico. El espacio terapéutico invita a observar sin juicio, comprender los propios procesos internos y desarrollar una relación más equilibrada con las emociones, los pensamientos y las experiencias cotidianas. No se trata de luchar contra uno mismo, sino de aprender a fluir con mayor conciencia, cultivando una transformación profunda y sostenible.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="taomente" aria-labelledby="taomente-title">
+      <div class="taomente-grid">
+        <div class="body-copy">
+          <p class="eyebrow">Tao-Mente</p>
+          <h2 id="taomente-title">¿Qué es TaoMente?</h2>
+          <p>TaoMente es un espacio de salud integral que aborda a la persona como una unidad: mente, cuerpo y espíritu. Su enfoque se inspira en los principios del taoísmo, integrados con la práctica clínica y la psicoterapia.</p>
+          <p>Como médica y psicoterapeuta, cuento con más de 10 años de experiencia en psicoterapia de orientación taoísta y diagnóstico clínico. A lo largo de estos años he acompañado a personas con distintas problemáticas emocionales y de salud, desarrollando un enfoque que integra la observación clínica, la escucha profunda y herramientas terapéuticas orientadas al bienestar integral.</p>
+          <p>Mi trabajo parte de la idea de que la salud no consiste únicamente en la ausencia de enfermedad, sino en recuperar el equilibrio entre los aspectos físicos, emocionales y mentales de cada persona. Desde la perspectiva del Tao, cada síntoma puede comprenderse dentro de una historia de vida y de un proceso de búsqueda de equilibrio.</p>
+          <p>Además de la práctica clínica, he desarrollado ensayos y escritos sobre este enfoque, con el propósito de profundizar el diálogo entre la medicina, la psicoterapia y la filosofía taoísta.</p>
+          <p>El objetivo de TaoMente es ofrecer un espacio de acompañamiento profesional, humano e integrador, respetando la singularidad de cada persona y favoreciendo procesos de transformación y bienestar.</p>
+        </div>
+        <img class="taomente-image" src="assets/tao-mente.png" alt="Imagen Tao-Mente con equilibrio entre cuerpo, mente, energía y espíritu" />
+      </div>
+    </section>
+
+    <section class="services-band" id="servicios" aria-labelledby="servicios-title">
+      <div class="services-inner">
+        <p class="eyebrow">Servicios</p>
+        <h2 class="services-title" id="servicios-title">Servicios</h2>
+        <ul class="services-list">
+          <li>Psicoterapia taoísta individual.</li>
+          <li>Diagnóstico clínico integral.</li>
+          <li>Evaluación del estrés crónico y del estado de alerta.</li>
+          <li>Regulación del sistema nervioso y del cortisol.</li>
+          <li>Abordaje del agotamiento físico y emocional (burnout).</li>
+          <li>Tratamiento de ansiedad, miedos e inseguridad.</li>
+          <li>Tratamiento de depresión.</li>
+          <li>Abordaje de adicciones y conductas compulsivas desde un enfoque integral.</li>
+          <li>Desarrollo de hábitos y rutinas para una vida saludable.</li>
+          <li>Prevención del desgaste y fortalecimiento de la resiliencia.</li>
+          <li>Técnicas de respiración, conciencia corporal y regulación emocional.</li>
+          <li>Educación para el autocuidado y el equilibrio entre mente, cuerpo y espíritu.</li>
+          <li>Diagnóstico de enfermedades crónicas y autoinmunes.</li>
+          <li>Acompañamiento terapéutico.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="enfoque" aria-labelledby="enfoque-title">
+      <div class="content-narrow body-copy lead">
+        <p class="eyebrow">Enfoque terapéutico</p>
+        <h2 id="enfoque-title">Enfoque</h2>
+        <p>Vivir con ansiedad, tristeza, estrés, insomnio o una sensación constante de vacío puede hacer que cada día se vuelva más difícil. Cuando estos síntomas se prolongan en el tiempo, es natural sentir que el equilibrio se ha perdido.</p>
+        <p>La psicoterapia con enfoque taoísta ofrece un espacio para comprender el origen de ese malestar y trabajar sobre él de manera integral. En lugar de centrarse únicamente en aliviar los síntomas, busca restablecer el equilibrio entre la mente, el cuerpo y las emociones, favoreciendo cambios profundos y sostenibles.</p>
+        <p>El proceso terapéutico integra principios de la Medicina Tradicional China y herramientas de acompañamiento psicológico respaldadas por siglos de desarrollo y perfeccionamiento, junto con técnicas que han demostrado utilidad clínica en la práctica terapéutica contemporánea.</p>
+        <p>El objetivo es ayudarte a reducir el sufrimiento, recuperar claridad, fortalecer tus recursos personales y avanzar hacia una vida con mayor serenidad, equilibrio y bienestar.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacto">
+    <div class="footer-inner">
+      <div>
+        <h2>Dra. Angel Carolina Coll</h2>
+        <p>Medicina tradicional china, terapia online, psicoterapia taoísta, acupuntura, ventosas y trabajo corporal.</p>
+      </div>
+      <a class="button" href="https://wa.me/543518083631" target="_blank" rel="noopener">Enviar WhatsApp</a>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/543518083631" target="_blank" rel="noopener" aria-label="Enviar WhatsApp a la Dra. Angel Carolina Coll">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.01 3.2A12.69 12.69 0 0 0 5.12 22.4L3.4 28.8l6.56-1.7A12.69 12.69 0 1 0 16.01 3.2Zm0 2.26a10.43 10.43 0 0 1 8.86 15.94 10.42 10.42 0 0 1-13.7 3.25l-.47-.28-3.9 1.01 1.04-3.79-.31-.49A10.43 10.43 0 0 1 16.01 5.46Zm-4.12 5.35c-.23-.52-.48-.53-.7-.54h-.6c-.2 0-.53.08-.81.38-.28.3-1.06 1.03-1.06 2.52s1.09 2.93 1.24 3.13c.15.2 2.1 3.36 5.18 4.57 2.57 1.02 3.1.82 3.66.77.56-.05 1.8-.73 2.05-1.44.25-.71.25-1.32.18-1.44-.08-.13-.28-.2-.58-.36-.3-.15-1.8-.89-2.08-.99-.28-.1-.48-.15-.68.15-.2.3-.78.99-.96 1.19-.18.2-.35.23-.65.08-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.18-.3-.02-.46.13-.61.14-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.66-1.64-.93-2.24Z"/></svg>
+  </a>
+</body>
+</html>
